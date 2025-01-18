@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📝 Milestone Tracker
 
-## Getting Started
+A blockchain-powered work tracking application that combines daily task management with smart contract goals. Set tasks, track your progress, and earn rewards for completing your goals!
 
-First, run the development server:
+![Milestone Tracker Screenshot](public/screenshot.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ⚡ Features
+
+- 📋 Daily task tracking with numbered entries
+- ⛓️ Blockchain-powered goal setting
+- 💰 Stake ETH as motivation for completing goals
+- 🎯 Smart contract reward system
+- 📅 Filter tasks by day, week, or month
+- 🌈 Web3 wallet integration
+
+## 🛠️ Tech Stack
+
+[![Tech Stack](https://skillicons.dev/icons?i=ts,react,nextjs,solidity,tailwind)](https://skillicons.dev)
+
+- Next.js with TypeScript
+- Solidity for Smart Contracts
+- Hardhat for Ethereum development
+- RainbowKit & wagmi for wallet integration
+- Tailwind CSS for styling
+- Sepolia Testnet deployment
+
+## 🚀 Getting Started
+
+### Environment Variables
+
+Create a `.env` file in the root directory:
+
+```env
+ALCHEMY_API_KEY=your_ALCHEMY_API_KEY
+PRIVATE_KEY=your_wallet_private_key
+ETHERSCAN_API_KEY=your_etherscan_key
+NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID=your_walletconnect_project_id
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository
+```bash
+git clone https://github.com/AtharvaD-coder/Milestone-Tracker.git
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. Install dependencies
+```bash
+npm install
+```
 
-## Learn More
+3. Compile smart contracts
+```bash
+cd backend
 
-To learn more about Next.js, take a look at the following resources:
+npx hardhat compile
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. Deploy smart contracts to Sepolia
+```bash
+npx hardhat run scripts/deploy.ts --network sepolia
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+5. Update the contract address and ABI
+- Copy the deployed contract address and ABI
+- Update `app/contractABI.ts` with the new ABI and `app/components/GoalForm.tsx` with the new address
 
-## Deploy on Vercel
+### Running Locally
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Start the development server
+```bash
+npm run dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+3. Connect your wallet (make sure it's on Sepolia network)
+
+## 📱 Usage
+
+1. **Connect Wallet**: Click the "Connect Wallet" button to connect your Web3 wallet
+2. **Daily Tasks**: Add your daily tasks using the numbered input system
+3. **Smart Contract Goals**: 
+   - Set a goal with a deadline
+   - Stake some ETH as motivation
+   - Mark goals as complete
+   - Claim your rewards when done
+4. **Filter View**: Toggle between daily, weekly, and monthly views
