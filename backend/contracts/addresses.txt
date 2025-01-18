@@ -1,0 +1,4 @@
+The goalTrackerAddress is:  0x797110F0b3c04bAefD67ad71c30baf9E52A49578
+
+Successfully verified contract GoalTracker on the block explorer.
+https://sepolia.etherscan.io/address/0x797110F0b3c04bAefD67ad71c30baf9E52A49578#code
